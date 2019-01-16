@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a87bd59b-7fa4-4331-bba1-460698d3e9e6" activeEnvironment="Default" name="HelloWorld" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6d40802a-76f5-4a42-b760-0c57fc38534e" wsaVersion="NONE" name="HelloWorldServiceSoapBinding" type="wsdl" bindingName="{http://webservices.samples.jboss.org/}HelloWorldServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://192.168.0.140:8080/rf2bpmws/HelloWorld?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.140:8080/rf2bpmws/HelloWorld?wsdl"><con:part><con:url>http://192.168.0.140:8080/rf2bpmws/HelloWorld?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloWorldService" targetNamespace="http://webservices.samples.jboss.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservices.samples.jboss.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservices.samples.jboss.org/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="sayHello" type="tns:sayHello"/>
+      <xs:element name="sayHelloResponse" type="tns:sayHelloResponse"/>
+      <xs:complexType name="sayHello">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sayHelloResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sayHelloResponse">
+    <wsdl:part element="tns:sayHelloResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHello">
+    <wsdl:part element="tns:sayHello" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloWorld">
+    <wsdl:operation name="sayHello">
+      <wsdl:input message="tns:sayHello" name="sayHello"></wsdl:input>
+      <wsdl:output message="tns:sayHelloResponse" name="sayHelloResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWorldServiceSoapBinding" type="tns:HelloWorld">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sayHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sayHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sayHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWorldService">
+    <wsdl:port binding="tns:HelloWorldServiceSoapBinding" name="HelloWorldPort">
+      <soap:address location="http://eclipse:8080/rf2bpmws/HelloWorld"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://eclipse:8080/rf2bpmws/HelloWorld</con:endpoint></con:endpoints><con:operation id="beaef339-0a56-409e-9240-729775d6a0d9" isOneWay="false" action="" name="sayHello" bindingOperationName="sayHello" type="Request-Response" outputName="sayHelloResponse" inputName="sayHello" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="90a59c8c-1d85-423e-ae6a-9099f36a50e3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.0.140:8080/rf2bpmws/HelloWorld</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.samples.jboss.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:sayHello>
+         <arg0>xxxx</arg0>
+      </web:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservices.samples.jboss.org/HelloWorld/sayHello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

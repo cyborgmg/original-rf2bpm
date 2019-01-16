@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<lote>
+    <cabecalho operacao="hello" sistemaorigem="sistemaOrigem" timestamp="timestamp"/>
+    <item>
+        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.samples.jboss.org/">   <soapenv:Header/>   <soapenv:Body>      <web:sayHello>         <arg0>Nome4</arg0>      </web:sayHello>   </soapenv:Body></soapenv:Envelope>]]></payload>
+    </item>
+    <item>
+        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.samples.jboss.org/">   <soapenv:Header/>   <soapenv:Body>      <web:sayHello>         <arg0>Nome4</arg0>      </web:sayHello>   </soapenv:Body></soapenv:Envelope>]]></payload>
+    </item>
+    <item>
+        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.samples.jboss.org/">   <soapenv:Header/>   <soapenv:Body>      <web:sayHello>         <arg0>Nome4</arg0>      </web:sayHello>   </soapenv:Body></soapenv:Envelope>]]></payload>
+    </item>
+</lote>
