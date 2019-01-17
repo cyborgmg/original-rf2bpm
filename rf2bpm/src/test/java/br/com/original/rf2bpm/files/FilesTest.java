@@ -48,14 +48,15 @@ public class FilesTest {
 			loteDto.setCabecalho(cabecalhoDto);
 			
 			StringBuilder sb = new StringBuilder("<![CDATA[");
-			sb.append("<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:web=\"http://webservices.samples.jboss.org/\">");
-	  	    sb.append("   <soapenv:Header/>");
-	  	    sb.append("   <soapenv:Body>");
-	  	    sb.append("      <web:sayHello>");
-	  	    sb.append("         <arg0>Nome"+ String.valueOf(i) +"</arg0>");
-	  	    sb.append("      </web:sayHello>");
-	  	    sb.append("   </soapenv:Body>");
-	  	    sb.append("</soapenv:Envelope>");
+			sb.append("<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:hel=\"http://original.com.br/types/helloworld\">");
+			sb.append("   <soapenv:Header/>");
+			sb.append("   <soapenv:Body>");
+			sb.append("      <hel:person>");
+			sb.append("         <hel:firstName>Nome"+String.valueOf(i)+"</hel:firstName>");
+			sb.append("         <hel:lastName>SobreNome"+String.valueOf(i)+"</hel:lastName>");
+			sb.append("      </hel:person>");
+			sb.append("   </soapenv:Body>");
+			sb.append("</soapenv:Envelope>");
 			sb.append("]]>");
 			
 			loteDto.getItems().add(new ItemDto(sb.toString()));

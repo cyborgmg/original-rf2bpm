@@ -61,7 +61,7 @@ public class Run {
 						sb.append(this.postSOAP( item.getPayload(), loteDto.getCabecalho() )+" - "+ item.getPayload()+"\n");
 						
 					} catch (Exception e) {
-						e.printStackTrace();
+						sb.append("404 - "+ item.getPayload()+"\n");
 					}
 				}
 				

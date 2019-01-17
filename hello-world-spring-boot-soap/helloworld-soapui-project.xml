@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ffa96d5d-c759-4ed2-9d90-e591557ae42f" activeEnvironment="Default" name="helloworld" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="fd2cce5a-74f1-4485-a7dd-5be551874705" wsaVersion="NONE" name="HelloWorld_SoapBinding" type="wsdl" bindingName="{http://original.com.br/services/helloworld}HelloWorld_SoapBinding" soapVersion="1_1" anonymous="optional" definition="http://192.168.0.140:2323/helloworldspringbootsoap/ws/helloworld.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://192.168.0.140:2323/helloworldspringbootsoap/ws/helloworld.wsdl"><con:part><con:url>http://192.168.0.140:2323/helloworldspringbootsoap/ws/helloworld.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloWorld" targetNamespace="http://original.com.br/services/helloworld" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://original.com.br/services/helloworld" xmlns:types="http://original.com.br/types/helloworld" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://original.com.br/types/helloworld" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="person">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="firstName" type="xsd:string"/>
+            <xsd:element name="lastName" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="greeting">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="greeting" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SayHelloInput">
+    <wsdl:part name="person" element="types:person"/>
+  </wsdl:message>
+  <wsdl:message name="SayHelloOutput">
+    <wsdl:part name="greeting" element="types:greeting"/>
+  </wsdl:message>
+  <wsdl:portType name="HelloWorld_PortType">
+    <wsdl:operation name="sayHello">
+      <wsdl:input message="tns:SayHelloInput"/>
+      <wsdl:output message="tns:SayHelloOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWorld_SoapBinding" type="tns:HelloWorld_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sayHello">
+      <soap:operation soapAction="http://original.com.br/services/helloworld/sayHello"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWorld_Service">
+    <wsdl:documentation>Hello World service</wsdl:documentation>
+    <wsdl:port name="HelloWorld_Port" binding="tns:HelloWorld_SoapBinding">
+      <soap:address location="http://localhost:2323/helloworldspringbootsoap/ws/helloworld"/>
+      <!--webservice eka thiyena thena-->
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:2323/helloworldspringbootsoap/ws/helloworld</con:endpoint></con:endpoints><con:operation id="5dbd347b-0360-489d-be7d-9d11bab26496" isOneWay="false" action="http://original.com.br/services/helloworld/sayHello" name="sayHello" bindingOperationName="sayHello" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e6093195-e227-43bc-9823-ea5e902fc21c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.0.140:2323/helloworldspringbootsoap/ws/helloworld</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://original.com.br/types/helloworld">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hel:person>
+         <hel:firstName>Rodrigo</hel:firstName>
+         <hel:lastName>Mendes</hel:lastName>
+      </hel:person>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://original.com.br/services/helloworld/sayHello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
