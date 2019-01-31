@@ -15,7 +15,7 @@
   </parent>
 
   <properties>
-    <java.version>1.8</java.version>
+    <java.version>1.7</java.version>
     <maven-jaxb2-plugin.version>0.13.3</maven-jaxb2-plugin.version>
   </properties>
 

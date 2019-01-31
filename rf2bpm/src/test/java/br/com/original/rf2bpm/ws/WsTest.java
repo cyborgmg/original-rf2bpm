@@ -14,16 +14,19 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Configuration
+@TestPropertySource("file:/opt/BPMO/properties/rf2bpm.properties")
 public class WsTest {
 	
 	@Value( "${ws.properties}" )
@@ -60,6 +63,13 @@ public class WsTest {
         int statusCode=response.getStatusLine().getStatusCode();
        
         assertEquals(200, statusCode); 
+        
+        String responseString = EntityUtils.toString(response.getEntity(),"UTF-8");//Getting the Response body
+        System.out.println(responseString);
+        /*
+        XmlPath jsXpath= new XmlPath(responseString);
+        String rate=jsXpath.getString("GetConversionRateResult");
+        System.out.println(rate);*/
 	}
 
 }

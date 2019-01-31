@@ -1,10 +1,15 @@
 package br.com.original.rf2bpm.dto;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import br.com.original.rf2bpm.util.DateTimeAdapter;
 
 @XmlRootElement(name = "lote")
 public class LoteDto {
@@ -36,4 +41,14 @@ public class LoteDto {
 		return "LoteDto [cabecalhoDto=" + cabecalhoDto + "]";
 	}
 
+	public boolean hasItemResponse(){
+		
+		for (ItemDto itemDto : itemDtos) {
+			if( itemDto.getResponse()!=null ){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }

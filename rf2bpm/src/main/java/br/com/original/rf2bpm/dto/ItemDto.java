@@ -1,10 +1,25 @@
 package br.com.original.rf2bpm.dto;
 
+import java.util.Date;
+
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import org.eclipse.persistence.oxm.annotations.XmlCDATA;
+
+import br.com.original.rf2bpm.util.DateTimeAdapter;
 
 public class ItemDto {
+	
+	private Integer statusCode;
+	
+	private Date timeStamp;
 
+	@XmlCDATA
 	private String payload;
+	@XmlCDATA
+	private String response;
 
 	public ItemDto() {
 		super();
@@ -16,7 +31,8 @@ public class ItemDto {
 		this.payload = payload;
 	}
 
-	@XmlElement(name = "payload")
+	@XmlCDATA
+	//@XmlElement(name = "payload")
 	public String getPayload() {
 		return payload;
 	}
@@ -25,9 +41,34 @@ public class ItemDto {
 		this.payload = payload;
 	}
 
-	@Override
-	public String toString() {
-		return "ItemDto [payload=" + payload + "]";
+	@XmlCDATA
+	//@XmlElement(name = "response")
+	public String getResponse() {
+		return response;
 	}
+
+	public void setResponse(String response) {
+		this.response = response;
+	}
+	
+	@XmlAttribute(name="status")
+	public Integer getStatusCode() {
+		return statusCode;
+	}
+
+	public void setStatusCode(Integer statusCode) {
+		this.statusCode = statusCode;
+	}
+
+	@XmlAttribute(name="timestamp")
+	@XmlJavaTypeAdapter(DateTimeAdapter.class)
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
 
 }

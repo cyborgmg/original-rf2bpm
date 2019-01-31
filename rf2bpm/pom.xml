@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.original</groupId>
 	<artifactId>rf2bpm</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<name>rf2bpm</name>
 	<description>Enviar ARquivo para BPM</description>
 
@@ -32,11 +32,21 @@
 		    <groupId>org.apache.httpcomponents</groupId>
 		    <artifactId>httpclient</artifactId>
 	    </dependency>
+	    <dependency>
+             <groupId>org.eclipse.persistence</groupId>
+             <artifactId>org.eclipse.persistence.moxy</artifactId>
+             <version>2.5.2</version>
+         </dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 		</dependency>
 	</dependencies>
 

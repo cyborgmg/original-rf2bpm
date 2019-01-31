@@ -2,12 +2,12 @@
 <lote>
     <cabecalho operacao="hello" sistemaorigem="sistemaOrigem" timestamp="timestamp"/>
     <item>
-        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.samples.jboss.org/">   <soapenv:Header/>   <soapenv:Body>      <web:sayHello>         <arg0>Nome7</arg0>      </web:sayHello>   </soapenv:Body></soapenv:Envelope>]]></payload>
+        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://original.com.br/types/helloworld">   <soapenv:Header/>   <soapenv:Body>      <hel:person>         <hel:firstName>Nome7</hel:firstName>         <hel:lastName>SobreNome7</hel:lastName>      </hel:person>   </soapenv:Body></soapenv:Envelope>]]></payload>
     </item>
     <item>
-        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.samples.jboss.org/">   <soapenv:Header/>   <soapenv:Body>      <web:sayHello>         <arg0>Nome7</arg0>      </web:sayHello>   </soapenv:Body></soapenv:Envelope>]]></payload>
+        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://original.com.br/types/helloworld">   <soapenv:Header/>   <soapenv:Body>      <hel:person>         <hel:firstName>Nome7</hel:firstName>         <hel:lastName>SobreNome7</hel:lastName>      </hel:person>   </soapenv:Body></soapenv:Envelope>]]></payload>
     </item>
     <item>
-        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.samples.jboss.org/">   <soapenv:Header/>   <soapenv:Body>      <web:sayHello>         <arg0>Nome7</arg0>      </web:sayHello>   </soapenv:Body></soapenv:Envelope>]]></payload>
+        <payload><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://original.com.br/types/helloworld">   <soapenv:Header/>   <soapenv:Body>      <hel:person>         <hel:firstName>Nome7</hel:firstName>         <hel:lastName>SobreNome7</hel:lastName>      </hel:person>   </soapenv:Body></soapenv:Envelope>]]></payload>
     </item>
 </lote>
